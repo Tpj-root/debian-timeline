@@ -1,7 +1,7 @@
 body
 {
     font-family: sans-serif;
-    background-color: #ffffff;
+    background-color: #000000;
     margin: 0;
     padding: 0;
 }
@@ -62,7 +62,7 @@ img
 
 #footer
 {
-	background-color: #f0f0f0;
+	background-color: #000000;
 	color: #707070;
 	padding: 0.2em 1em 0.2em 1em;
 	margin: 2em 0 0 0;
@@ -72,12 +72,12 @@ img
     	font-size: 0.5em;
 }
 
-p
-{
-	color: #606060;
-	margin: 0.3ex 0em 1ex 0;
-	padding: 0 0 0 0;
+p {
+    color: #00f449;         /* Sets paragraph text color to a bright green */
+    margin: 0.3ex 0em 1ex 0; /* Sets outer spacing: top, right, bottom, left */
+    padding: 0 0 0 0;        /* No inner spacing on any side */
 }
+
 
 a
 {
