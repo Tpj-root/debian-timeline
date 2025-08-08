@@ -18,32 +18,32 @@ function onLoad() {
 	var bandInfos = [
 		Timeline.createBandInfo({
 			eventSource:    events,
-			width:          "57%", 
-			intervalUnit:   Timeline.DateTime.MONTH, 
+			width:          "57%",
+			intervalUnit:   Timeline.DateTime.MONTH,
 			intervalPixels: 100,
 			date:		start_date,
 			theme:		theme
 		}),
 		Timeline.createBandInfo({
 			eventSource:    release_eras,
-			width:          "10%", 
-			intervalUnit:   Timeline.DateTime.YEAR, 
+			width:          "10%",
+			intervalUnit:   Timeline.DateTime.YEAR,
 			intervalPixels: 500,
 			date:		start_date,
 			theme:		theme
 		}),
 		Timeline.createBandInfo({
 			eventSource:    releases,
-			width:          "26%", 
-			intervalUnit:   Timeline.DateTime.YEAR, 
+			width:          "26%",
+			intervalUnit:   Timeline.DateTime.YEAR,
 			intervalPixels: 500,
 			date:		start_date,
 			theme:		theme
 		}),
 		Timeline.createBandInfo({
 			eventSource:    releases,
-			width:          "7%", 
-			intervalUnit:   Timeline.DateTime.YEAR, 
+			width:          "7%",
+			intervalUnit:   Timeline.DateTime.YEAR,
 			intervalPixels: 70,
 			date:		start_date,
 			theme:		theme,
