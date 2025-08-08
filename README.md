@@ -20,18 +20,13 @@ https://salsa.debian.org/publicity-team/debian-timeline
 
 
 
-# build
+# build txt into xml
 
 ```
 
 python3 build.py data/releases > xml/releases.xml
 python3 build.py data/release_eras > xml/release_eras.xml
 python3 build.py data/events > xml/events.xml
-
-
-
-python3 build.py data/releases
-
 
 ```
 

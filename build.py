@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import os
 import sys
@@ -16,20 +16,20 @@ def main(dir):
     doc.appendChild(events)
 
     for filename in glob(os.path.join(dir, '*')):
-        print >>sys.stderr, "Reading events from %s" % filename,
-        input = file(filename).read().decode('utf-8').split('\n')
+        print(f"Reading events from {filename}", file=sys.stderr)
+        with open(filename, encoding='utf-8') as f:
+            input_lines = f.read().split('\n')
 
-        obj = deb822.Deb822(input)
-        for para in deb822.Deb822.iter_paragraphs(input, use_apt_pkg=False):
+        for para in deb822.Deb822.iter_paragraphs(input_lines, use_apt_pkg=False):
             events.appendChild(create_event(doc, para))
             sys.stderr.write('.')
             num += 1
-        print >>sys.stderr
+        print(file=sys.stderr)
 
-    print >>sys.stderr, "Writing %s events" % num
+    print(f"Writing {num} events", file=sys.stderr)
 
-    print '<!-- Generated from %s/* - do not edit -->' % dir
-    print events.toprettyxml(indent='  ').encode('utf-8')
+    print(f'<!-- Generated from {dir}/* - do not edit -->')
+    print(events.toprettyxml(indent='  '))
 
 def create_event(doc, para):
     entry = doc.createElement('entry')
@@ -43,7 +43,7 @@ def create_event(doc, para):
         entry.setAttribute('start', para['Date'])
 
     if 'Source' in para:
-        text = doc.createTextNode('<a href="%s">Source</a>' % para['Source'])
+        text = doc.createTextNode(f'<a href="{para["Source"]}">Source</a>')
         entry.appendChild(text)
 
     return entry
